@@ -30,7 +30,8 @@ in the wrong gate.
 - The user problem, stated as a person's problem
 - What success looks like, measurably
 - A short announcement written as if the change already shipped
-- Plain HTML mockups for any screen involved, in `mockups/`
+- Plain HTML mockups for any screen involved, in `mockups/`. Draft them with OpenUI as
+  described in `docs/factory/MOCKUPS.md`.
 - **What we are deliberately not doing**
 
 That last item is the one people skip and the one that saves the most time. It is also

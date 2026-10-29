@@ -6,7 +6,7 @@ the factory's cloud routines are not used. The contract and charter still apply 
 
 | Stage | Who | Notes |
 |---|---|---|
-| Triage, spec | Planner (Claude Code) | Runs `factory-triage` and `factory-spec`; spec gates wait for the human. |
+| Triage, spec | Planner (Claude Code) | Runs `factory-triage` and `factory-spec`; spec gates wait for the human. Gate 1 mockups are drafted with OpenUI (`docs/factory/MOCKUPS.md`). |
 | Claim | Planner | Pushes the `claude/fq-<n>` claim branch and moves the label to `factory:in-progress`. |
 | Implement | Worker (local model via Claude Code) | Gets one small, explicit task at a time from the planner through `ask-worker`. No network and no `gh`; it runs only `pnpm` commands. |
 | Gates, negative-test proof | Planner | Runs `gates.sh` and `prove-test.sh`; the worker cannot run them. |
