@@ -10,7 +10,34 @@ not continuously.
 Set this to `ready` only after reviewing every section:
 
 ```
-CHARTER_STATUS: incomplete
+CHARTER_STATUS: ready
+```
+
+## 0. Goal
+
+The human owner set this goal on 2026-10-29. Triage uses it to decide whether an item is in scope.
+
+```
+GOAL: People in Europe prepare their own insurance claim with ClaimKit and send it to the insurer themselves.
+
+ALPHA_SCOPE:
+  - Country: Czechia (the cz pack), UI in cs and en
+  - Claim types: travel (delay, baggage, medical expenses abroad), motor accident, home and property
+  - Output, made in the browser: claim letter PDF, evidence index PDF, deadline summary
+  - Claim drafts stay in the browser (IndexedDB), with resume, JSON export and import, and delete all
+  - A visible "no legal advice" notice and a privacy page
+  - Every legal reference with verified false is shown as informational
+
+ALPHA_DONE:
+  - A tester completes one claim of each type in cs and downloads its PDFs
+  - The Playwright smoke test runs a travel baggage claim to the downloaded PDF
+  - gates.sh full reports GREEN on main
+  - pnpm build produces a static export, and src makes no network calls
+
+OUT_OF_SCOPE_FOR_ALPHA:
+  - Sending anything to insurers, accounts, payments and analytics
+  - Health and life insurance claims, except travel medical expenses abroad
+  - Countries other than cz (the synthetic xx test pack stays)
 ```
 
 ---
@@ -31,7 +58,8 @@ TIER: greenfield
 ```
 
 ClaimKit is unlaunched and has no users. It moves to `client-production` before the first
-real claimant uses it, because then a wrong letter or deadline costs someone money.
+real claimant uses it, because then a wrong letter or deadline costs someone money. Invited alpha testers use invented claims only, so the
+alpha stays `greenfield`; the first real claim, private or public, needs `client-production`.
 
 **Why the tier and not the difficulty:** autonomy tracks who gets hurt when it is wrong.
 A ten-thousand-line migration on an unlaunched project is a safer bet than a fifty-line
@@ -59,6 +87,7 @@ LOAD_BEARING:
   - ".agents/**"
   - ".codex/**"
   - "AGENTS.md"
+  - "docs/factory/CHARTER.md"
 ```
 
 Why these paths: `src/jurisdictions/**` holds legal references, deadline rules and letter
@@ -183,6 +212,6 @@ Constraints set once become either a permanent tax or a permanent hole. Review t
   trusted. Record what the gate missed.
 
 ```
-LAST_REVIEWED: <set when you mark the charter ready>
-NEXT_REVIEW: <one month after LAST_REVIEWED>
+LAST_REVIEWED: 2026-10-29
+NEXT_REVIEW: 2026-11-29
 ```
