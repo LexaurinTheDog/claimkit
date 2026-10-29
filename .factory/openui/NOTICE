@@ -1,0 +1,7 @@
+system-prompt.txt is copied unmodified from wandb/openui
+(frontend/src/api/openai.ts, `systemPrompt`, commit 42d7ab4ab6650433486dfb12eb3783c393a3e475),
+Copyright Weights & Biases, licensed under the Apache License, Version 2.0:
+https://github.com/wandb/openui/blob/42d7ab4ab6650433486dfb12eb3783c393a3e475/LICENSE
+
+The frontmatter instruction appended in .factory/scripts/mockup.sh and the theme
+variables in its HTML wrapper follow the same project's createOrRefine() and wrappedCode().
